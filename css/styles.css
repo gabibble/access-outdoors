@@ -1,0 +1,39 @@
+html {
+  margin: 0px;
+  padding: 0px;
+}
+
+.lp a {
+  color: white;
+  text-decoration: none;
+}
+
+.lp {
+  background-color: #0f82c9;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.lp .hero {
+  margin: 0px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(#0f82c9a3, #0f82c9), url(/images/hero.jpg);
+}
+
+.main-links {
+  text-align: center;
+}
+
+.main-links .main-icon {
+  font-size: 96px;
+}
+
+.contribute a {
+    font-weight: 600;
+    padding: 5px;
+
+}
+
