@@ -17,7 +17,7 @@ html {
 
 .lp .hero {
   margin: 0px;
-  height: 350px;
+  height: 330px;
   background-size: cover;
   background-position: center;
   background-image: linear-gradient(#0f82c9a3, #0f82c9), url(/images/hero.jpg);
@@ -31,9 +31,9 @@ html {
   font-size: 96px;
 }
 
-.contribute a {
+/* .contribute a {
     font-weight: 600;
     padding: 5px;
 
-}
+} */
 
