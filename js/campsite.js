@@ -43,8 +43,8 @@ async function getData() {
 }
 
 async function displayDetails() {
-  let data = campSite;
-//   let data = await getData();
+//   let data = campSite;
+  let data = await getData();
   let details = document.querySelector("#details");
     details.innerHTML = `       <div class="col-md-6 p-4">
             <h2 class="display-4">${data[0].campground}</h2>
