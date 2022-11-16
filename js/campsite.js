@@ -70,7 +70,7 @@ async function displayDetails() {
             <p>${data[0].siteFeatures}</p>
             <p>${data[0].extraFeatures}</p>
           </div>
-                  <div class="col-md-6 p-4">
+            <div class="col-md-6 p-4">
             <img src="/images/${data[0].photo}" class="img-fluid" alt="${data[0].campground}" />
           </div>`;
     console.log(data[0])
