@@ -3,6 +3,8 @@ html {
   padding: 0px;
 }
 
+
+
 .lp a {
   color: white;
   text-decoration: none;
@@ -10,9 +12,13 @@ html {
 
 .lp {
   background-color: #0f82c9;
-  color: white;
   margin: 0;
   padding: 0;
+}
+
+.lp main {
+  color: white;
+
 }
 
 .lp .hero {
@@ -23,6 +29,10 @@ html {
   background-image: linear-gradient(#0f82c9a3, #0f82c9), url(/images/hero.jpg);
 }
 
+.hero-text {
+  color: white;
+
+}
 .main-links {
   text-align: center;
 }

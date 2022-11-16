@@ -1,8 +1,13 @@
 let campObj = [
   {
-    id: "001",
+    id: "cg001",
     campground: "French Pete",
     site: "Site 2",
+    area: "Willamette National Forest",
+    city: "Blue River",
+    state: "Oregon",
+    link: "https://www.recreation.gov/camping/campgrounds/234730",
+    photo: "camp-ph.jpg",
     type: "Multi-site, Multi-fee",
     reservable: "Yes",
     parking:
@@ -18,9 +23,14 @@ let campObj = [
     extraFeatures: "",
   },
   {
-    id: "002",
+    id: "cg002",
     campground: "French Pete",
     site: "Site 5",
+    area: "Willamette National Forest",
+    city: "Blue River",
+    state: "Oregon",
+    link: "https://www.recreation.gov/camping/campgrounds/234730",
+    photo: "camp-ph.jpg",
     type: "Multi-site, Multi-fee",
     reservable: "Yes",
     parking: "Fits 2 cars. Pretty flat ",
@@ -36,9 +46,14 @@ let campObj = [
     extraFeatures: "",
   },
   {
-    id: "003",
+    id: "cg003",
     campground: "French Pete",
     site: "Site 12",
+    area: "Willamette National Forest",
+    city: "Blue River",
+    state: "Oregon",
+    link: "https://www.recreation.gov/camping/campgrounds/234730",
+    photo: "camp-ph.jpg",
     type: "Multi-Site, Multi-fee",
     reservable: "First Come First Serve",
     parking: "2-3 cars parked next to each other. Mostly flat",
@@ -55,9 +70,14 @@ let campObj = [
     extraFeatures: "",
   },
   {
-    id: "004",
+    id: "cg004",
     campground: "Blue Bay Campground ",
     site: "Site 9",
+    area: "Deschutes National Forest",
+    city: "Sisters",
+    state: "Oregon",
+    link: "https://www.recreation.gov/camping/campgrounds/232787",
+    photo: "camp-ph.jpg",
     type: "Standard ",
     reservable: "Yes",
     parking: "Flat, paved parking area 1-2 cars wide. 2 cars deep.",
@@ -71,9 +91,14 @@ let campObj = [
       "Campground road is all paved, but hilly. Boat ramp access to water. Additional wheelchair accessible bathroom closer to campground entrance with a compact dirt, pine needle mixture between paved road and concrete bathroom entrance. ~1.5-2 inch lip from dirt to concrete entrance.",
   },
   {
-    id: "005",
+    id: "cg005",
     campground: "Cougar Crossing Campground ",
     site: "Site 8",
+    area: "Willamette National Forest",
+    city: "Blue River",
+    state: "Oregon",
+    link: "https://www.recreation.gov/camping/campgrounds/122491",
+    photo: "camp-ph.jpg",
     type: "Standard ",
     reservable: "First Come First Served",
     parking: "Flat, room for 1 car only",
@@ -86,33 +111,55 @@ let campObj = [
   },
 ];
 
-// async function getData() {
-//   let response = await fetch(
-//     "https://api.apispreadsheets.com/data/rcDnjf1njC9ePP8L/"
-//   );
+let ssid = "rcDnjf1njC9ePP8L";
 
-//   if (!response.ok) {
-//     throw new Error(`HTTP error! status: ${response.status}`);
-//   }
+async function getData() {
+  let response = await fetch(
+    `https://api.apispreadsheets.com/data/${ssid}/`
+  );
 
-//   let data = await response.json();
-//   console.log(data.data)
-//   return data.data;
-// }
-
-async function displayData() {
-  let data = campObj;
-  //   let data = await getData();
-  console.log(data);
-  let campCards = document.querySelector("#camp-cards");
-  for (var i = 0; i < data.length; i++) {
-    let element = data[i];
-    console.log(element.id);
-    campCards.innerHTML += `<p> ${element.id} </p>`;
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
+
+  let data = await response.json();
+  console.log(data.data);
+  return data.data;
 }
 
-displayData();
+async function displayCards() {
+  // function displayDetails(arr) {
+  //   let details = document.querySelector("#details");
+  //   details.innerHTML = `${arr.id}`;
+  //   console.log(arr)
+  // }
+
+  let data = campObj;
+  // let data = await getData();
+  let cards = document.querySelector("#cards");
+  data.map((element) => {
+    cards.innerHTML += `     
+      <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card" >
+              <img src="./images/camp-ph.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${element.campground}</h5>
+                <h6>${element.site}</h6>
+                <p class="card-text">${element.city}, ${element.state}</p>
+                <a href="/campsite.html?id=${element.id}&ssid=${ssid}" class="btn btn-primary" id=${element.id}>Learn More</a>
+              </div>
+            </div>
+          </div>`;
+    // document.querySelector(`#${element.id}`).addEventListener("click", (event) => {
+    //   event.preventDefault;
+    //   let details = document.querySelector("#details");
+    //   details.innerHTML = `hello ${element.id}`;
+    //   console.log(element);
+    // });
+  });
+}
+
+displayCards();
 
 // import { csv } from "csvtojson";
 
