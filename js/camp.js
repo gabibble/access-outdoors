@@ -146,7 +146,7 @@ async function displayCards() {
                 <h5 class="card-title">${element.campground}</h5>
                 <h6>${element.site}</h6>
                 <p class="card-text">${element.city}, ${element.state}</p>
-                <a href="/campsite.html?id=${element.id}&ssid=${ssid}" class="btn btn-primary" id=${element.id}>Learn More</a>
+                <a href="/campsite.html?ssid=${ssid}&id=${element.id}" class="btn btn-primary" id=${element.id}>Learn More</a>
               </div>
             </div>
           </div>`;
