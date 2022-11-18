@@ -50,28 +50,22 @@ async function displayDetails() {
             <h2 class="display-4">${data[0].campground}</h2>
             <h3 class="display-6">${data[0].site}</h3>
             <h5>Near ${data[0].city}, ${data[0].state} &nbsp|&nbsp ${data[0].area}</h5>
-            <a href="${data[0].link}">website</a>
+            <a href="${data[0].link}">Recreation.gov website</a>
             <br><br>
      
             <h3 class="display-6">Accessibility Details</h3>
-            <h5>Campsite Type</h5>
-            <p>${data[0].type}</p>
-            <h5>Reservable</h5>
-            <p>${data[0].reservable}</p>
-            <h5>Entry</h5>
-            <p>${data[0].entry}</p>
-            <h5>Distance to bathroom</h5>
-            <p>${data[0].bathroomDistance}</p>
-            <h5>Picnic Table</h5>
-            <p>${data[0].picnicTable}</p>
-            <h5>Surface</h5>
-            <p>${data[0].surface}</p>
-            <h5>Site Features</h5>
-            <p>${data[0].siteFeatures}</p>
+            <p><strong>Campsite Type: </strong>${data[0].type}</p>
+            <p><strong>Reservable: </strong>${data[0].reservable}</p>
+            <p><strong>Entry: </strong>${data[0].entry}</p>
+            <p><strong>Distance to bathroom: </strong>${data[0].bathroomDistance}</p>
+            <p><strong>Picnic Table: </strong>${data[0].picnicTable}</p>
+            <p><strong>Surface: </strong>${data[0].surface}</p>
+            <p><strong>Site Features: </strong>${data[0].siteFeatures}</p>
             <p>${data[0].extraFeatures}</p>
           </div>
             <div class="col-md-6 p-4">
             <img src="/images/${data[0].photo}" class="img-fluid" alt="${data[0].campground}" />
+            <caption>This is a caption</caption>
           </div>`;
     console.log(data[0])
 }

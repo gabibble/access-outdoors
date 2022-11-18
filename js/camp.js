@@ -128,11 +128,7 @@ async function getData() {
 }
 
 async function displayCards() {
-  // function displayDetails(arr) {
-  //   let details = document.querySelector("#details");
-  //   details.innerHTML = `${arr.id}`;
-  //   console.log(arr)
-  // }
+
 
   let data = campObj;
   // let data = await getData();
@@ -141,7 +137,7 @@ async function displayCards() {
     cards.innerHTML += `     
       <div class="col-md-4 col-sm-6 mb-4">
             <div class="card" >
-              <img src="./images/camp-ph.jpg" class="card-img-top" alt="...">
+              <img src="./images/${element.photo}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">${element.campground}</h5>
                 <h6>${element.site}</h6>
@@ -150,12 +146,7 @@ async function displayCards() {
               </div>
             </div>
           </div>`;
-    // document.querySelector(`#${element.id}`).addEventListener("click", (event) => {
-    //   event.preventDefault;
-    //   let details = document.querySelector("#details");
-    //   details.innerHTML = `hello ${element.id}`;
-    //   console.log(element);
-    // });
+
   });
 }
 
